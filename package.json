@@ -1,0 +1,19 @@
+{
+  "name": "xirelta.com",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "xirelta",
+    "start": "xirelta"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.22",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "xirelta": "^0.0.23"
+  }
+}
