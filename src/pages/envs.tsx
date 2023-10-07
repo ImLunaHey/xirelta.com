@@ -1,1 +1,1 @@
-export default () => <pre>{JSON.stringify(process.env)}</pre>
+export default () => <pre>{JSON.stringify(process.env, null, 2)}</pre>
