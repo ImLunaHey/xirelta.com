@@ -19,6 +19,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@axiomhq/js": "^1.0.0-rc.1",
     "@imlunahey/logger": "0.0.24",
     "xirelta": "^0.0.33"
   }
