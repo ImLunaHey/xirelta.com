@@ -45,6 +45,7 @@ setInterval(async () => {
             external: memoryData.external, // -> V8 external memory`,
         };
         axiom.ingest(process.env.AXIOM_DATASET!, {
+            eventType: 'stats',
             cpu,
             memory,
         });
