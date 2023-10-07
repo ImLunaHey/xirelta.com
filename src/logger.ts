@@ -16,8 +16,12 @@ export const logger = new Logger({
             'Web server stopping': z.object({}).passthrough(),
             'Web server stopped': z.object({}).passthrough(),
             request: z.object({
+                method: z.string(),
+                body: z.any(),
+                path: z.string(),
+                params: z.object({}).passthrough(),
                 headers: z.object({}).passthrough(),
-            }).passthrough(),
+            }),
         },
         error: {
             'Failed to ingest stats': z.object({}).passthrough(),

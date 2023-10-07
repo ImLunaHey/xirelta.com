@@ -2,7 +2,13 @@ import { type RouteWithParams } from 'xirelta';
 import { logger } from '../logger';
 
 const route: RouteWithParams<'*', '/'> = (request): JSX.Element => {
-    logger.info('request', {request});
+    logger.info('request', {
+        method: request.method,
+        path: request.path,
+        body: request.body,
+        params: request.params,
+        headers: request.safeHeaders,
+    });
     return <html lang="en">
         <head>
             <meta charSet="UTF-8" />
