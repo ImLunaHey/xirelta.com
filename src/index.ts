@@ -1,30 +1,9 @@
 import os from 'os';
 import { Application } from 'xirelta';
-import { Logger, z } from '@imlunahey/logger';
 import { Axiom } from '@axiomhq/js';
+import { logger } from './logger';
 
 const branch = process.env.RAILWAY_GIT_BRANCH ?? process.env.PR_GIT_BRANCH ?? process.env.GIT_BRANCH;
-
-const logger = new Logger({
-    service: 'website',
-    defaultMeta: {
-        branch,
-        eventType: 'log',
-    },
-    schema: {
-        debug: {
-            'Registered routes': z.object({}).passthrough(),
-        },
-        info: {
-            'Web server started': z.object({}).passthrough(),
-            'Web server stopping': z.object({}).passthrough(),
-            'Web server stopped': z.object({}).passthrough(),
-        },
-        error: {
-            'Failed to ingest stats': z.object({}).passthrough(),
-        }
-    }
-});
 
 // Flush stats about application once a second
 setInterval(async () => {
