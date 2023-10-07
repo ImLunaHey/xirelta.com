@@ -1,0 +1,1 @@
+export default () => <pre>{JSON.stringify(process.env)}</pre>
