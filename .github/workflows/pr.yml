@@ -5,6 +5,10 @@ on:
     types:
       - opened
 
+permissions: 
+  issues: 
+    write
+
 jobs:
   comment:
     runs-on: ubuntu-latest
