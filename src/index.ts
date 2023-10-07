@@ -3,10 +3,12 @@ import { Application } from 'xirelta';
 import { Logger, z } from '@imlunahey/logger';
 import { Axiom } from '@axiomhq/js';
 
+const branch = process.env.RAILWAY_GIT_BRANCH ?? process.env.PR_GIT_BRANCH ?? process.env.GIT_BRANCH;
+
 const logger = new Logger({
     service: 'website',
     defaultMeta: {
-        branch: process.env.RAILWAY_GIT_BRANCH ?? process.env.PR_GIT_BRANCH ?? process.env.GIT_BRANCH,
+        branch,
         eventType: 'log',
     },
     schema: {
@@ -45,6 +47,7 @@ setInterval(async () => {
             external: memoryData.external, // -> V8 external memory`,
         };
         axiom.ingest(process.env.AXIOM_DATASET!, {
+            branch,
             eventType: 'stats',
             cpu,
             memory,
