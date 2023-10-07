@@ -3,7 +3,7 @@
 Welcome to the official website repository for Xirelta, a lightweight web framework for building web applications in TypeScript with Bun.
 
 <p align="left">
-  <img src="./.github/assets/logo.png" alt="Xirelta Logo" width="100" height="100"/>
+  <img src="./.agithub/assets/logo.png" alt="Xirelta Logo" width="100" height="100"/>
 </p>
 
 ## Overview
