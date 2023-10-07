@@ -2,15 +2,20 @@
   "name": "xirelta.com",
   "module": "src/index.ts",
   "devDependencies": {
+    "@happy-dom/global-registrator": "^12.9.0",
+    "@types/pretty": "^2.0.1",
     "@types/react": "^18.2.22",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "pretty": "^2.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "scripts": {
     "dev": "xirelta",
-    "start": "xirelta"
+    "start": "xirelta",
+    "test": "bun test",
+    "coverage": "bun test --coverage"
   },
   "type": "module",
   "dependencies": {

@@ -1,6 +1,6 @@
-import { RouteWithParams } from 'xirelta';
+import { type RouteWithParams } from 'xirelta';
 
-const route: RouteWithParams<'*', '/'> = () => {
+const route: RouteWithParams<'*', '/'> = (): JSX.Element => {
     return <html lang="en">
         <head>
             <meta charSet="UTF-8" />
