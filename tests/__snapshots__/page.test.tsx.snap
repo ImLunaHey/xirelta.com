@@ -27,4 +27,4 @@ exports[`page renders 1`] = `
 </html>"
 `;
 
-exports[`404 renders 1`] = `"404 - Page not found"`;
+exports[`404 renders 1`] = `"404 - Not Found"`;
