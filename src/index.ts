@@ -12,11 +12,10 @@ setInterval(async () => {
         orgId: process.env.AXIOM_ORG_ID!,
     });
     try {
-        const cpuData = os.loadavg();
+        const cpuData = process.cpuUsage();
         const cpu = {
-            oneMinute: cpuData[0],
-            fiveMinutes: cpuData[1],
-            fifteenMinutes: cpuData[2],
+            system: cpuData.system,
+            user: cpuData.user,
         };
         const memoryData = process.memoryUsage();
         const memory = {
@@ -24,6 +23,7 @@ setInterval(async () => {
             heapTotal: memoryData.heapTotal, // -> total size of the allocated heap`,
             heapUsed: memoryData.heapUsed, // -> actual memory used during the execution`,
             external: memoryData.external, // -> V8 external memory`,
+            arrayBuffers: memoryData.arrayBuffers,
         };
         axiom.ingest(process.env.AXIOM_DATASET!, {
             branch,
